@@ -1,0 +1,15 @@
+{
+ "AnalyticModel": {
+     "tags" : { 
+             "analytic-root": "analytic",
+             "driver-root": "driver", 
+             "driver-main": "driver/AnalyticDriver.py",
+             "mapper": "driver",
+             "resultprovider": "results"
+          },
+     "memory" : "1G",
+     "instances" : "1",
+     "conda-libs" : ["numpy==1.8.0"],
+     "libs" : ["lifelines"]
+ }
+}
