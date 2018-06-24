@@ -23,8 +23,8 @@ while i < len(c):
 rm.seed(123)
 
 # split the data frame into training and test sets
-train_sample = rm.sample(xrange(4521), 3000)
-test_sample = [x for x in xrange(4521) if x not in train_sample]
+train_sample = rm.sample(range(4521), 3000)
+test_sample = [x for x in range(4521) if x not in train_sample]
 bank_train = bank.iloc[train_sample,]
 bank_test = bank.iloc[test_sample,]
 
@@ -37,9 +37,9 @@ pred_vals = dec.predict(bank_test.iloc[:, 0:16])
 
 # create a table of predicted outcomes compared to actual results
 # the sum of the entries along the main diagonal are the number of correctly predicted labels
-print pd.crosstab(pred_vals, bank_test['y'])
+print(pd.crosstab(pred_vals, bank_test['y']))
 
 # get ratio of correctly labeled samples to total samples
 score = dec.score(bank_test.iloc[:, 0:16], bank_test['y'])
-print "prediction accurracy: ", score
+print("prediction accurracy: ", score)
 

@@ -50,10 +50,10 @@ vectorizer = CountVectorizer(min_df=1, stop_words='english', lowercase=True)
 vectorizer.fit_transform(hotelReviews['text'])  # returns scipy.sparse.csr.csr_matrix
 
 # prints features (i.e. terms) in alphabetical order
-print vectorizer.get_feature_names()
+print(vectorizer.get_feature_names())
 
 # prints mapping of terms to feature indices
-print vectorizer.vocabulary_
+print(vectorizer.vocabulary_)
 
 # create and display word cloud
 wordcloud = WordCloud().generate(" ".join(list(hotelReviews['text'])))
